@@ -21,6 +21,8 @@ frame_skip_size = 3 # skips 3 frames, so uses every 4th frame
 input_shape = [stack_size, g.compressedHeight, g.compressedWidth] # shape of input to neural newtwork
 
 def create_save_dir():
+	if not os.path.exists('models'):
+		os.makedirs('models')
 	dirs = os.listdir('models')
 	if dirs == []:
 		return 'models/001'
